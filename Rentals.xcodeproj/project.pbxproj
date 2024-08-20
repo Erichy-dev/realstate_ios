@@ -68,7 +68,6 @@
 				0452F14A2C74AA2700ED9856 /* homeViews */,
 				0452F1222C746C7F00ED9856 /* RentalsApp.swift */,
 				0452F1242C746C7F00ED9856 /* HomeView.swift */,
-				0452F1472C74A8DB00ED9856 /* Filters.swift */,
 				0452F1262C746C8100ED9856 /* Assets.xcassets */,
 				0452F1282C746C8100ED9856 /* Preview Content */,
 				0452F14D2C74B59C00ED9856 /* Data.swift */,
@@ -100,6 +99,7 @@
 			children = (
 				0452F13E2C74A87F00ED9856 /* filters */,
 				0452F14B2C74B4F000ED9856 /* HomeViewModel.swift */,
+				0452F1472C74A8DB00ED9856 /* Filters.swift */,
 			);
 			path = homeViews;
 			sourceTree = "<group>";

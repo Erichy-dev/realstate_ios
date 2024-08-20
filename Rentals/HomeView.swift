@@ -17,19 +17,7 @@ struct HomeView: View {
                         .foregroundColor(.primary)
                 }
                 
-                HStack {
-                    HouseTypeFilter()
-                    
-                    // price button
-                    PriceFilter()
-                    
-                    // rating button
-                    RatingFilter()
-                    
-                    // uploaded button
-                    UploadedFilter()
-                }
-                .frame(maxWidth: .infinity)
+                Filters()
                 
                 Spacer()
                 
