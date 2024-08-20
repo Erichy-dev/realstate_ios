@@ -15,9 +15,9 @@ struct RatingFilter: View {
             viewModel.toggleRatingFilter()
             viewModel.setFetchedPlots(viewModel.fetchedPlots.sorted { (plot1: Plot, plot2: Plot) in
                 if viewModel.ratingFilter {
-                    return plot1.plotRating < plot2.plotRating
+                    return plot1.plot_rating < plot2.plot_rating
                 } else {
-                    return plot1.plotRating > plot2.plotRating
+                    return plot1.plot_rating > plot2.plot_rating
                 }
             })
                 }) {

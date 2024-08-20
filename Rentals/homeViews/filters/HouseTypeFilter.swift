@@ -15,35 +15,35 @@ struct HouseTypeFilter: View {
             Menu {
                 Button(action: {
                     viewModel.setSelectedRoomOption("Single")
-                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plotSingle })
+                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot_single })
                 }) {
                     Text("Single")
                 }
                 
                 Button(action: {
                     viewModel.setSelectedRoomOption("Bedsitter")
-                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plotBedsitter })
+                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot_bedsitter })
                 }) {
                     Text("Bedsitter")
                 }
                 
                 Button(action: {
                     viewModel.setSelectedRoomOption("1 Bedroom")
-                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot1B })
+                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot_1B })
                 }) {
                     Text("1 Bedroom")
                 }
                 
                 Button(action: {
                     viewModel.setSelectedRoomOption("2 Bedroom")
-                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot2B })
+                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot_2B })
                 }) {
                     Text("2 Bedroom")
                 }
                 
                 Button(action: {
                     viewModel.setSelectedRoomOption("Bedsitter")
-                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plotBedsitter })
+                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot_bedsitter })
                 }) {
                     Text("Reset")
                 }

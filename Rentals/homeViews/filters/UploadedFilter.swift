@@ -16,9 +16,9 @@ struct UploadedFilter: View {
             
             let sortedPlots = viewModel.fetchedPlots.sorted { (plot1: Plot, plot2: Plot) in
                 if viewModel.uploadedFilter {
-                    return plot1.plotUploadDate < plot2.plotUploadDate
+                    return plot1.plot_upload_date < plot2.plot_upload_date
                 } else {
-                    return plot1.plotUploadDate > plot2.plotUploadDate
+                    return plot1.plot_upload_date > plot2.plot_upload_date
                 }
             }
             viewModel.setFetchedPlots(sortedPlots)

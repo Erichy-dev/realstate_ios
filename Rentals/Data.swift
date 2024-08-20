@@ -1,19 +1,18 @@
 import Foundation
 
 // Plot model
-struct Plot: Codable, Identifiable {
-    let id: String // Adding an ID for use in SwiftUI lists, optional
-    let plotNumber: String
-    let plotUploadDate: String
-    let plotAddress: String
-    let plotPrice: Int
-    let plotSingle: Bool
-    let plotBedsitter: Bool
-    let plot1B: Bool
-    let plot2B: Bool
-    let plot3B: Bool
-    let plotRating: Int
-    let plotBgPic: String?
+struct Plot: Codable {
+    let plot_number: String
+    let plot_upload_date: String
+    let plot_address: String
+    let plot_price: Int
+    let plot_single: Bool
+    let plot_bedsitter: Bool
+    let plot_1B: Bool
+    let plot_2B: Bool
+    let plot_3B: Bool
+    let plot_rating: Int
+    let plot_bg_pic: String?
 }
 
 // PlotsResponse model
@@ -27,8 +26,7 @@ struct PlotResponse: Codable {
 }
 
 // PlotPic model
-struct PlotPic: Codable, Identifiable {
-    let id: String // Adding an ID for use in SwiftUI lists, optional
+struct PlotPic: Codable {
     let plotNumber: String
     let plotPic: String
     let plotPicDesc: String?
@@ -40,8 +38,7 @@ struct PlotPicResponse: Codable {
 }
 
 // PlotOccupant model
-struct PlotOccupant: Codable, Identifiable {
-    let id: String // Adding an ID for use in SwiftUI lists, optional
+struct PlotOccupant: Codable {
     let plotNumber: String
     let plotOccupantId: String
     let plotOccupantFName: String

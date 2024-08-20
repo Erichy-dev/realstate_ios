@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var viewModel = HomeViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -19,6 +21,13 @@ struct HomeView: View {
                 
                 Filters()
                 
+                // list of plots
+                List {
+                    ForEach(viewModel.fetchedPlots, id: \.plot_number) { plot in
+                        Text(plot.plot_number)
+                    }
+                }
+                
                 Spacer()
                 
                 // privacy policy link
@@ -28,6 +37,20 @@ struct HomeView: View {
             }
             .padding(10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }
+        .onAppear() {
+            fetchPlots(viewModel: viewModel)
+        }
+    }
+    
+    private func fetchPlots(viewModel: HomeViewModel) {
+        PlotsApiService.shared.getPlots{ result in
+            switch result {
+            case .success(let plotsResponse):
+                viewModel.setFetchedPlots(plotsResponse.plots)
+            case .failure(let error):
+                print("error \(error.localizedDescription)")
+            }
         }
     }
 }

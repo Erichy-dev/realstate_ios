@@ -18,6 +18,8 @@
 		0452F1482C74A8DB00ED9856 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F1472C74A8DB00ED9856 /* Filters.swift */; };
 		0452F14C2C74B4F000ED9856 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F14B2C74B4F000ED9856 /* HomeViewModel.swift */; };
 		0452F14E2C74B59C00ED9856 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F14D2C74B59C00ED9856 /* Data.swift */; };
+		0452F1532C74D9A300ED9856 /* networkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F1522C74D9A300ED9856 /* networkMonitor.swift */; };
+		0452F1552C74DF0B00ED9856 /* GetPlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F1542C74DF0B00ED9856 /* GetPlots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		0452F1472C74A8DB00ED9856 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		0452F14B2C74B4F000ED9856 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0452F14D2C74B59C00ED9856 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0452F1522C74D9A300ED9856 /* networkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkMonitor.swift; sourceTree = "<group>"; };
+		0452F1542C74DF0B00ED9856 /* GetPlots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlots.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 		0452F1212C746C7F00ED9856 /* Rentals */ = {
 			isa = PBXGroup;
 			children = (
+				0452F1512C74D0D600ED9856 /* api */,
 				0452F14A2C74AA2700ED9856 /* homeViews */,
 				0452F1222C746C7F00ED9856 /* RentalsApp.swift */,
 				0452F1242C746C7F00ED9856 /* HomeView.swift */,
@@ -102,6 +107,15 @@
 				0452F1472C74A8DB00ED9856 /* Filters.swift */,
 			);
 			path = homeViews;
+			sourceTree = "<group>";
+		};
+		0452F1512C74D0D600ED9856 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				0452F1522C74D9A300ED9856 /* networkMonitor.swift */,
+				0452F1542C74DF0B00ED9856 /* GetPlots.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +192,9 @@
 				0452F1422C74A89800ED9856 /* RatingFilter.swift in Sources */,
 				0452F1462C74A8C700ED9856 /* UploadedFilter.swift in Sources */,
 				0452F14C2C74B4F000ED9856 /* HomeViewModel.swift in Sources */,
+				0452F1532C74D9A300ED9856 /* networkMonitor.swift in Sources */,
 				0452F1402C74A88D00ED9856 /* PriceFilter.swift in Sources */,
+				0452F1552C74DF0B00ED9856 /* GetPlots.swift in Sources */,
 				0452F1252C746C7F00ED9856 /* HomeView.swift in Sources */,
 				0452F1442C74A8A300ED9856 /* HouseTypeFilter.swift in Sources */,
 				0452F14E2C74B59C00ED9856 /* Data.swift in Sources */,

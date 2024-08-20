@@ -15,9 +15,9 @@ struct PriceFilter: View {
             viewModel.togglePriceFilter()
             let sortedPlots = viewModel.fetchedPlots.sorted { (plot1: Plot, plot2: Plot) in
                 if viewModel.priceFilter {
-                    return plot1.plotPrice < plot2.plotPrice
+                    return plot1.plot_price < plot2.plot_price
                 } else {
-                    return plot1.plotPrice > plot2.plotPrice
+                    return plot1.plot_price > plot2.plot_price
                 }
             }
             viewModel.setFetchedPlots(sortedPlots)
