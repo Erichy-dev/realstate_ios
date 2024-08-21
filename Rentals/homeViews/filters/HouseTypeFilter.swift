@@ -52,6 +52,8 @@ struct HouseTypeFilter: View {
                 HStack {
                     Text(viewModel.selectedRoomOption)
                         .font(.subheadline)
+                        .lineLimit(1)
+                        .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                     Image(systemName: "chevron.down")
                         .font(.footnote)
                 }
