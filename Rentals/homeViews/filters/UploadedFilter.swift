@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UploadedFilter: View {
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     @State private var uploadedIconName = "chevron.down"
     
     var body: some View {

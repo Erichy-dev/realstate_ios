@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlotView: View {
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     
     let columns = [
         GridItem(.flexible()),

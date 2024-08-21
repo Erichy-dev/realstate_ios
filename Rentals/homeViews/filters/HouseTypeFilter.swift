@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HouseTypeFilter: View {
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
         VStack {

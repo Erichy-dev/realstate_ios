@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RatingFilter: View {
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     @State private var ratingIconName = "chevron.up"
     
     var body: some View {

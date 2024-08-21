@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PriceFilter: View {
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     @State private var priceIconName = "chevron.up"
     
     var body: some View {

@@ -7,19 +7,28 @@
 
 import Foundation
 import Network
+import Combine
 
-class NetworkMonitor {
+class NetworkMonitor: ObservableObject {
     static let shared = NetworkMonitor()
+    
     private let monitor = NWPathMonitor()
+    private let queue = DispatchQueue.global(qos: .background)
+    
+    @Published var isConnected: Bool  = false
+
     private var isMonitoring = false
     
-    var isConnected: Bool {
-        return monitor.currentPath.status == .satisfied
-    }
+    private init() {}
     
     func startMonitoring() {
         if !isMonitoring {
-            monitor.start(queue: DispatchQueue.global(qos: .background))
+            monitor.pathUpdateHandler = { [weak self] path in
+                DispatchQueue.main.async {
+                    self?.isConnected = path.status == .satisfied
+                }
+            }
+            monitor.start(queue: queue)
             isMonitoring = true
         }
     }

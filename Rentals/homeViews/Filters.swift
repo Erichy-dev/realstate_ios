@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Filters: View {
-    let viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
         HStack {
@@ -26,7 +26,3 @@ struct Filters: View {
         .frame(maxWidth: .infinity)
     }
 }
-
-//#Preview {
-//    Filters()
-//}

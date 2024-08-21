@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeScreen: View {
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
@@ -20,6 +20,8 @@ struct HomeView: View {
                 }
                 
                 Filters(viewModel: viewModel)
+                
+                NetworkStatusView()
                 
                 PlotView(viewModel: viewModel)
             }
@@ -44,5 +46,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeScreen()
 }
