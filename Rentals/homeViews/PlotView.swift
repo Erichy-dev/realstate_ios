@@ -23,37 +23,32 @@ struct PlotView: View {
                         let urlString = plot.plot_bg_pic
                         let url = URL(string: urlString!)
     
-                        ZStack {
-                            AsyncImage(url: url) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                        NavigationLink(destination: PlotScreen(plot_number: plot.plot_number)) {
+                            ZStack {
+                                AsyncImage(url: url) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                } placeholder: {
+                                    ProgressView() // Shows a loading spinner while the image loads
+                                }
+                                
+                                Color.black.opacity(0.5)
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
-                            } placeholder: {
-                                ProgressView() // Shows a loading spinner while the image loads
-                            }
-    
-                            Color.black.opacity(0.5)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-    
-                            VStack {
-                                Text(plot.plot_type)
-                                Text("Ksh.\(plot.plot_price)")
-                                HStack(spacing: 2) {
-                                    ForEach(0..<5) { index in
-                                        if index < plot.plot_rating {
-                                            Image(systemName: "star.fill")
-                                                .foregroundColor(.yellow)
-                                        } else {
-                                            Image(systemName: "star.fill")
-                                                .foregroundColor(.gray)
-                                        }
-                                    }
+                                
+                                VStack {
+                                    Text(plot.plot_type)
+                                        .foregroundColor(.white)
+                                    Text("Ksh.\(plot.plot_price)")
+                                        .foregroundColor(.white)
+                                    RatingsView(plot_rating: plot.plot_rating)
                                 }
                             }
                         }
                     }
                 }
+                .padding(.vertical, 20)
                 .frame(minHeight: reader.size.height)
                 
                 Link("Privacy Policy", destination: URL(string: "https://github.com/Erichy-dev/realestate_kotlin/")!)

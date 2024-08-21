@@ -24,6 +24,9 @@
 		0452F1552C74DF0B00ED9856 /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F1542C74DF0B00ED9856 /* NetworkCalls.swift */; };
 		045580952C760599009B5AC5 /* NetworkStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045580942C760599009B5AC5 /* NetworkStatusView.swift */; };
 		045580982C760BBB009B5AC5 /* PlotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045580972C760BBB009B5AC5 /* PlotViewModel.swift */; };
+		04FAE7762C76464D0083684C /* PlotPicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAE7752C76464D0083684C /* PlotPicsView.swift */; };
+		04FAE7782C7647800083684C /* PlotDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAE7772C7647800083684C /* PlotDetails.swift */; };
+		04FAE77A2C76481B0083684C /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAE7792C76481B0083684C /* RatingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		0452F1542C74DF0B00ED9856 /* NetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCalls.swift; sourceTree = "<group>"; };
 		045580942C760599009B5AC5 /* NetworkStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusView.swift; sourceTree = "<group>"; };
 		045580972C760BBB009B5AC5 /* PlotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotViewModel.swift; sourceTree = "<group>"; };
+		04FAE7752C76464D0083684C /* PlotPicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotPicsView.swift; sourceTree = "<group>"; };
+		04FAE7772C7647800083684C /* PlotDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDetails.swift; sourceTree = "<group>"; };
+		04FAE7792C76481B0083684C /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 				0452F14B2C74B4F000ED9856 /* HomeViewModel.swift */,
 				0452F1472C74A8DB00ED9856 /* Filters.swift */,
 				040835812C75A13600A0202A /* PlotView.swift */,
+				04FAE7792C76481B0083684C /* RatingsView.swift */,
 			);
 			path = homeViews;
 			sourceTree = "<group>";
@@ -134,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				045580972C760BBB009B5AC5 /* PlotViewModel.swift */,
+				04FAE7752C76464D0083684C /* PlotPicsView.swift */,
+				04FAE7772C7647800083684C /* PlotDetails.swift */,
 			);
 			path = plotViews;
 			sourceTree = "<group>";
@@ -209,16 +218,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0452F1482C74A8DB00ED9856 /* Filters.swift in Sources */,
+				04FAE7782C7647800083684C /* PlotDetails.swift in Sources */,
 				0452F1422C74A89800ED9856 /* RatingFilter.swift in Sources */,
 				0452F1462C74A8C700ED9856 /* UploadedFilter.swift in Sources */,
 				0452F14C2C74B4F000ED9856 /* HomeViewModel.swift in Sources */,
 				0452F1532C74D9A300ED9856 /* networkMonitor.swift in Sources */,
 				045580982C760BBB009B5AC5 /* PlotViewModel.swift in Sources */,
+				04FAE7762C76464D0083684C /* PlotPicsView.swift in Sources */,
 				045580952C760599009B5AC5 /* NetworkStatusView.swift in Sources */,
 				040835842C75E57A00A0202A /* PlotScreen.swift in Sources */,
 				0452F1402C74A88D00ED9856 /* PriceFilter.swift in Sources */,
 				0452F1552C74DF0B00ED9856 /* NetworkCalls.swift in Sources */,
 				040835822C75A13600A0202A /* PlotView.swift in Sources */,
+				04FAE77A2C76481B0083684C /* RatingsView.swift in Sources */,
 				0452F1252C746C7F00ED9856 /* HomeScreen.swift in Sources */,
 				0452F1442C74A8A300ED9856 /* HouseTypeFilter.swift in Sources */,
 				0452F14E2C74B59C00ED9856 /* Data.swift in Sources */,
