@@ -13,6 +13,22 @@ struct Plot: Codable {
     let plot_3B: Bool
     let plot_rating: Int
     let plot_bg_pic: String?
+    
+    var plot_type: String {
+        if plot_single {
+            return "Single"
+        } else if plot_bedsitter {
+            return "Bedsitter"
+        } else if plot_1B {
+            return "1 Bedroom"
+        } else if plot_2B {
+            return "2 Bedroom"
+        } else if plot_3B {
+            return "3 Bedroom"
+        } else {
+            return "Unknown"
+        }
+    }
 }
 
 // PlotsResponse model
@@ -27,25 +43,25 @@ struct PlotResponse: Codable {
 
 // PlotPic model
 struct PlotPic: Codable {
-    let plotNumber: String
-    let plotPic: String
-    let plotPicDesc: String?
+    let plot_number: String
+    let plot_pic: String
+    let Plot_pic_desc: String?
 }
 
 // PlotPicResponse model
 struct PlotPicResponse: Codable {
-    let plotPics: [PlotPic]
+    let plot_pics: [PlotPic]
 }
 
 // PlotOccupant model
 struct PlotOccupant: Codable {
-    let plotNumber: String
-    let plotOccupantId: String
-    let plotOccupantFName: String
-    let plotOccupantLName: String?
-    let plotOccupantClass: String
-    let plotOccupantPhone: String
-    let plotOccupantEmail: String?
+    let plot_number: String
+    let plot_occupant_id: String
+    let plot_occupant_f_name: String
+    let plot_occupant_l_name: String?
+    let plot_occupant_class: String
+    let plot_occupant_phone: String
+    let plot_occupant_email: String?
 }
 
 // PlotCaretakerResponse model

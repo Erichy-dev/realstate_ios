@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct UploadedFilter: View {
-    @StateObject private var viewModel = HomeViewModel()
+    let viewModel: HomeViewModel
+    @State private var uploadedIconName = "chevron.down"
     
     var body: some View {
         Button(action: {
             viewModel.toggleUploadedFilter()
+            uploadedIconName = viewModel.uploadedFilter ? "chevron.down" : "chevron.up"
             
             let sortedPlots = viewModel.fetchedPlots.sorted { (plot1: Plot, plot2: Plot) in
                 if viewModel.uploadedFilter {
@@ -26,7 +28,7 @@ struct UploadedFilter: View {
                     HStack {
                         Text("Uploaded")
                             .font(.subheadline)
-                        Image(systemName: viewModel.uploadedFilter ? "chevron.up" : "chevron.down")
+                        Image(systemName: uploadedIconName)
                             .font(.footnote)
                     }
                     .padding(6)
@@ -35,8 +37,4 @@ struct UploadedFilter: View {
                     .cornerRadius(6)
                 }
     }
-}
-
-#Preview {
-    UploadedFilter()
 }

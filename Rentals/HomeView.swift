@@ -19,21 +19,9 @@ struct HomeView: View {
                         .foregroundColor(.primary)
                 }
                 
-                Filters()
+                Filters(viewModel: viewModel)
                 
-                // list of plots
-                List {
-                    ForEach(viewModel.fetchedPlots, id: \.plot_number) { plot in
-                        Text(plot.plot_number)
-                    }
-                }
-                
-                Spacer()
-                
-                // privacy policy link
-                Link("Privacy Policy", destination: URL(string: "https://github.com/Erichy-dev/realestate_kotlin/")!)
-                    .font(.footnote)
-                    .foregroundColor(.blue)
+                PlotView(viewModel: viewModel)
             }
             .padding(10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -47,7 +35,7 @@ struct HomeView: View {
         PlotsApiService.shared.getPlots{ result in
             switch result {
             case .success(let plotsResponse):
-                viewModel.setFetchedPlots(plotsResponse.plots)
+                viewModel.setNewPlots(plotsResponse.plots)
             case .failure(let error):
                 print("error \(error.localizedDescription)")
             }

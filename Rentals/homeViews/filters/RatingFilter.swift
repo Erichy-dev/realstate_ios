@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct RatingFilter: View {
-    @StateObject private var viewModel = HomeViewModel()
+    let viewModel: HomeViewModel
+    @State private var ratingIconName = "chevron.up"
     
     var body: some View {
         Button(action: {
             viewModel.toggleRatingFilter()
+            ratingIconName = viewModel.ratingFilter ? "chevron.down" : "chevron.up"
+            
             viewModel.setFetchedPlots(viewModel.fetchedPlots.sorted { (plot1: Plot, plot2: Plot) in
                 if viewModel.ratingFilter {
                     return plot1.plot_rating < plot2.plot_rating
@@ -24,7 +27,7 @@ struct RatingFilter: View {
                     HStack {
                         Text("Rating")
                             .font(.subheadline)
-                        Image(systemName: viewModel.ratingFilter ? "chevron.up" : "chevron.down")
+                        Image(systemName: ratingIconName)
                             .font(.footnote)
                     }
                     .padding(6)
@@ -33,8 +36,4 @@ struct RatingFilter: View {
                     .cornerRadius(6)
                 }
     }
-}
-
-#Preview {
-    RatingFilter()
 }

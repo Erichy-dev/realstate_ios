@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HouseTypeFilter: View {
-    @StateObject private var viewModel = HomeViewModel()
+    let viewModel: HomeViewModel
     
     var body: some View {
         VStack {
@@ -43,7 +43,7 @@ struct HouseTypeFilter: View {
                 
                 Button(action: {
                     viewModel.setSelectedRoomOption("Bedsitter")
-                    viewModel.setFetchedPlots(viewModel.originalPlots.filter { plot in plot.plot_bedsitter })
+                    viewModel.setFetchedPlots(viewModel.originalPlots)
                 }) {
                     Text("Reset")
                 }
@@ -62,8 +62,4 @@ struct HouseTypeFilter: View {
             }
         }
     }
-}
-
-#Preview {
-    HouseTypeFilter()
 }

@@ -23,13 +23,9 @@ class HomeViewModel: ObservableObject {
         self.fetchedPlots = plots
     }
     
-    private func setNewPlots(_ plots: [Plot]) {
+    func setNewPlots(_ plots: [Plot]) {
         self.fetchedPlots = plots
         self.originalPlots = plots
-    }
-    
-    func fetchPlots() {
-        //
     }
     
     func setExpandedRooms(_ value: Bool) {

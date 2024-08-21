@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PriceFilter: View {
-    @StateObject private var viewModel = HomeViewModel()
+    let viewModel: HomeViewModel
+    @State private var priceIconName = "chevron.up"
     
     var body: some View {
         Button(action: {
             viewModel.togglePriceFilter()
+            priceIconName = viewModel.priceFilter ? "chevron.down" : "chevron.up"
+            
             let sortedPlots = viewModel.fetchedPlots.sorted { (plot1: Plot, plot2: Plot) in
                 if viewModel.priceFilter {
                     return plot1.plot_price < plot2.plot_price
@@ -21,21 +24,17 @@ struct PriceFilter: View {
                 }
             }
             viewModel.setFetchedPlots(sortedPlots)
-                }) {
-                    HStack {
-                        Text("Price")
-                            .font(.subheadline)
-                        Image(systemName: viewModel.priceFilter ? "chevron.up" : "chevron.down")
-                            .font(.footnote)
-                    }
-                    .padding(6)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(6)
-                }
+        }) {
+            HStack {
+                Text("Price")
+                    .font(.subheadline)
+                Image(systemName: priceIconName)
+                    .font(.footnote)
+            }
+            .padding(6)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(6)
+        }
     }
-}
-
-#Preview {
-    PriceFilter()
 }

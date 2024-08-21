@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct Filters: View {
+    let viewModel: HomeViewModel
+    
     var body: some View {
         HStack {
-            HouseTypeFilter()
+            HouseTypeFilter(viewModel: viewModel)
             
             // price button
-            PriceFilter()
+            PriceFilter(viewModel: viewModel)
             
             // rating button
-            RatingFilter()
+            RatingFilter(viewModel: viewModel)
             
             // uploaded button
-            UploadedFilter()
+            UploadedFilter(viewModel: viewModel)
         }
         .frame(maxWidth: .infinity)
     }
 }
 
-#Preview {
-    Filters()
-}
+//#Preview {
+//    Filters()
+//}
