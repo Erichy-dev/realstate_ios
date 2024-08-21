@@ -11,7 +11,9 @@ class PlotViewModel: ObservableObject {
     @Published var plotPics: [PlotPic] = []
     
     func setPlotPics(_ pics: [PlotPic]) {
-        self.plotPics = pics
+        DispatchQueue.main.async {
+            self.plotPics = pics
+        }
     }
     
     // plot details
@@ -30,12 +32,16 @@ class PlotViewModel: ObservableObject {
     )
     
     func setPlotDetails(_ plot_details: Plot) {
-        self.plotDetails = plot_details
+        DispatchQueue.main.async {
+            self.plotDetails = plot_details
+        }
     }
     
     // plot caretakers
     @Published var plotCaretakers: [PlotOccupant] = []
     func setPlotCaretakers(_ plot_caretakers: [PlotOccupant]) {
-        self.plotCaretakers = plot_caretakers
+        DispatchQueue.main.async {
+            self.plotCaretakers = plot_caretakers
+        }
     }
 }

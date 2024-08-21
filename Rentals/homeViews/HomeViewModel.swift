@@ -20,31 +20,45 @@ class HomeViewModel: ObservableObject {
     @Published var ratingFilter: Bool = false
     
     func setFetchedPlots(_ plots: [Plot]) {
-        self.fetchedPlots = plots
+        DispatchQueue.main.async {
+            self.fetchedPlots = plots
+        }
     }
     
     func setNewPlots(_ plots: [Plot]) {
-        self.fetchedPlots = plots
-        self.originalPlots = plots
+        DispatchQueue.main.async {
+            self.fetchedPlots = plots
+            self.originalPlots = plots
+        }
     }
     
     func setExpandedRooms(_ value: Bool) {
-        self.expandedRooms = value
+        DispatchQueue.main.async {
+            self.expandedRooms = value
+        }
     }
     
     func setSelectedRoomOption(_ option: String) {
-        self.selectedRoomOption = option
+        DispatchQueue.main.async {
+            self.selectedRoomOption = option
+        }
     }
     
     func toggleUploadedFilter() {
-        self.uploadedFilter.toggle()
+        DispatchQueue.main.async {
+            self.uploadedFilter.toggle()
+        }
     }
     
     func togglePriceFilter() {
-        self.priceFilter.toggle()
+        DispatchQueue.main.async {
+            self.priceFilter.toggle()
+        }
     }
     
     func toggleRatingFilter() {
-        self.ratingFilter.toggle()
+        DispatchQueue.main.async {
+            self.ratingFilter.toggle()
+        }
     }
 }

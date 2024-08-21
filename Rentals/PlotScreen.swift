@@ -13,10 +13,14 @@ struct PlotScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                PlotPicsView(plot_number: plot_number)
-                
-                PlotDetails(plot_number: plot_number)
+            ScrollView {
+                VStack {
+                    NetworkStatusView()
+                    
+                    PlotPicsView(plot_number: plot_number)
+                    
+                    PlotDetails(plot_number: plot_number)
+                }
             }
         }
     }

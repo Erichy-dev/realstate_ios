@@ -30,6 +30,7 @@ struct PlotPicsView: View {
                 }
             }
             .padding(.horizontal, 20)
+            .padding(.bottom, 20)
         }
         .onAppear() {
             fetchPlotDetails()
