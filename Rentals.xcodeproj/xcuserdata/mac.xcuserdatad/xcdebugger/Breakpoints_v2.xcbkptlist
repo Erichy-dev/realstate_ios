@@ -3,4 +3,22 @@
    uuid = "11117994-7ADE-410F-933A-F77736D6C124"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE4E94EB-3EE8-4E14-94F8-E45533659C40"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rentals/homeViews/PlotView.swift"
+            startingColumnNumber = "17"
+            endingColumnNumber = "17"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

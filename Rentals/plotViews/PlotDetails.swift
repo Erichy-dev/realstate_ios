@@ -15,19 +15,34 @@ struct PlotDetails: View {
         VStack(spacing: 40) {
             RatingsView(plot_rating: plotViewModel.plotDetails.plot_rating)
             
-            Text("Plot Contacts")
-                .padding(.horizontal, 20)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            HStack(spacing: 10) {
+                Image(.magic)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 30)
+                
+                Text("Plot Contacts")
+                    .foregroundColor(.white)
+                
+                Image(.magic)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 30)
+            }
+            .padding(.horizontal, 20)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             
             Group {
                 HStack {
                     Text("Caretakers")
+                        .foregroundColor(.white)
                     
                     Spacer()
                     
                     VStack(spacing: 5) {
                         ForEach(plotViewModel.plotCaretakers, id: \.plot_occupant_phone) {caretaker in
                             Text("\(caretaker.plot_occupant_phone)")
+                                .foregroundColor(.white)
                         }
                     }
                 }

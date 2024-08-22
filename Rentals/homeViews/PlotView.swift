@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PlotView: View {
     @ObservedObject var viewModel: HomeViewModel
@@ -25,14 +26,13 @@ struct PlotView: View {
     
                         NavigationLink(destination: PlotScreen(plot_number: plot.plot_number)) {
                             ZStack {
-                                AsyncImage(url: url) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                } placeholder: {
-                                    ProgressView() // Shows a loading spinner while the image loads
-                                }
+                                KFImage(url)
+                                    .placeholder{
+                                        ProgressView()
+                                    }
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
                                 
                                 Color.black.opacity(0.5)
                                     .clipShape(RoundedRectangle(cornerRadius: 20))

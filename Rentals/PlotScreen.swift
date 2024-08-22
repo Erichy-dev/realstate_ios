@@ -13,13 +13,18 @@ struct PlotScreen: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    NetworkStatusView()
-                    
-                    PlotPicsView(plot_number: plot_number)
-                    
-                    PlotDetails(plot_number: plot_number)
+            ZStack {
+                Color(UIColor.black)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+    
+                ScrollView {
+                    VStack {
+                        NetworkStatusView()
+                        
+                        PlotPicsView(plot_number: plot_number)
+                        
+                        PlotDetails(plot_number: plot_number)
+                    }
                 }
             }
         }

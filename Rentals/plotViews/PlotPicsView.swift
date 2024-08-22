@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PlotPicsView: View {
     let plot_number: String
@@ -18,15 +19,14 @@ struct PlotPicsView: View {
                     let urlString = plotPic.plot_pic
                     let url = URL(string: urlString)
                     
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 400)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                    } placeholder: {
-                        ProgressView() // Shows a loading spinner while the image loads
-                    }
+                    KFImage(url)
+                        .placeholder{
+                            ProgressView()
+                        }
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 400)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
             }
             .padding(.horizontal, 20)
@@ -42,6 +42,7 @@ struct PlotPicsView: View {
             switch result {
             case .success(let plotPicResponse):
                 plotViewModel.setPlotPics(plotPicResponse.plot_pics)
+                print(plotPicResponse.plot_pics[0].plot_pic)
             case .failure(let error):
                 print(error.localizedDescription)
             }

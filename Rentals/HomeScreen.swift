@@ -12,21 +12,26 @@ struct HomeScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    Text("Rentals")
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
+            ZStack {
+                Color(UIColor.black)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                
+                VStack {
+                    HStack {
+                        Text("Rentals")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Filters(viewModel: viewModel)
+                    
+                    NetworkStatusView()
+                    
+                    PlotView(viewModel: viewModel)
                 }
-                
-                Filters(viewModel: viewModel)
-                
-                NetworkStatusView()
-                
-                PlotView(viewModel: viewModel)
+                .padding(10)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
-            .padding(10)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
         .onAppear() {
             fetchPlots(viewModel: viewModel)
